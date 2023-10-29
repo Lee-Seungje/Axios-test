@@ -1,5 +1,7 @@
+import ApiTest from "./api";
+
 function App() {
-  return <div className="App">ㅎㅇ</div>;
+  return <ApiTest />;
 }
 
 export default App;
