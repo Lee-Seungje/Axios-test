@@ -1,7 +1,7 @@
-import ApiTest from "./api";
+import CameraCapture from "./camera";
 
 function App() {
-  return <ApiTest />;
+  return <CameraCapture />;
 }
 
 export default App;
