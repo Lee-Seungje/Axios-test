@@ -19,6 +19,9 @@ const Result = ({ goNext, faces }) => {
     <div>
       <h1>결과가 나옵니다.</h1>
       <h2>이름 : {name}</h2>
+      <h2>성별 : {gender}</h2>
+      <h2>나이 : {age}</h2>
+      <h2>직무 : {job}</h2>
       <img src={imageUrl} />
       <ul>
         {faces?.map(({ celebrity }, i) => (
