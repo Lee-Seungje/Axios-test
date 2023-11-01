@@ -6,3 +6,4 @@ export { default as Gender } from "./Gender";
 export { default as Age } from "./Age";
 export { default as Job } from "./Job";
 export { default as Contact } from "./Contact";
+export { default as Intro } from "./Intro";

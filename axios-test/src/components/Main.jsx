@@ -1,14 +1,23 @@
 "use client";
 
-import { Result, Name, CameraCapture, Gender, Age, Job } from "components";
+import {
+  Result,
+  Name,
+  CameraCapture,
+  Gender,
+  Age,
+  Job,
+  Intro,
+} from "components";
 import { useState } from "react";
 
 const Main = () => {
-  const [step, setStep] = useState("이름");
+  const [step, setStep] = useState("인트로");
   const [faces, setFaces] = useState();
 
   return (
-    <div className="w-96 flex justify-center h-screen">
+    <div className="w-custom flex justify-center h-screen">
+      {step === "인트로" && <Intro goNext={() => setStep("이륾")} />}
       {step === "이름" && <Name goNext={() => setStep("나이")} />}
       {step === "나이" && (
         <Age goNext={() => setStep("성별")} goPrev={() => setStep("이름")} />

@@ -9,7 +9,11 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      width: {
+        custom: "31.25rem", // 원하는 너비 정의
+      },
+    },
   },
   plugins: [],
 };
