@@ -1,8 +1,6 @@
 "use client";
 
-import CameraCapture from "./camera";
-import Name from "./Name";
-import Result from "./Result";
+import { Result, Name, CameraCapture } from "components";
 import { useState } from "react";
 
 const Main = () => {
