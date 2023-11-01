@@ -2,7 +2,7 @@ import React, { useRef, useCallback } from "react";
 import Webcam from "react-webcam";
 import { useState } from "react";
 
-const CameraCapture = () => {
+const CameraCapture = ({ goNext }) => {
   const [image, setImage] = useState(null);
 
   const dataURItoBlob = (dataURI) => {
@@ -29,6 +29,7 @@ const CameraCapture = () => {
       <Webcam audio={false} ref={webcamRef} screenshotFormat="image/png" />
       <button onClick={capture}>사진 찍기</button>
       {image && <img src={getImageUrl()} />}
+      <button onClick={goNext}>다음</button>
     </div>
   );
 };
