@@ -8,6 +8,7 @@ const Name = ({ goNext }) => {
   return (
     <div>
       <input
+        className="text-8xl"
         value={name}
         placeholder="이름을 입력해주세요."
         onChange={(e) => setName(e.target.value)}

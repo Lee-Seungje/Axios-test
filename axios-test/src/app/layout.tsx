@@ -1,4 +1,3 @@
-import "tailwindcss/tailwind.css";
 import "styles/global.css";
 
 export const metadata = {
@@ -13,7 +12,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ko">
-      <body>{children}</body>
+      <body>
+        <div className="w-500 h-500 bg-zinc-900">{children}</div>
+      </body>
     </html>
   );
 }
