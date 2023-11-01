@@ -3,10 +3,12 @@
 import React, { useRef, useCallback } from "react";
 import Webcam from "react-webcam";
 import { useState } from "react";
-import { postImage } from "../api/postImage";
+import { postImage } from "api/postImage";
+import { useImageUrlState } from "stores";
 
 const CameraCapture = ({ goNext, setFaces, setFaceCount }) => {
   const [image, setImage] = useState(null);
+  const { setImageUrl } = useImageUrlState();
 
   const dataURItoBlob = (dataURI) => {
     const byteString = atob(dataURI.split(",")[1]);
@@ -43,6 +45,7 @@ const CameraCapture = ({ goNext, setFaces, setFaceCount }) => {
       {image && <img src={getImageUrl()} />}
       <button
         onClick={() => {
+          setImageUrl(getImageUrl());
           postPersonImage();
           goNext();
         }}

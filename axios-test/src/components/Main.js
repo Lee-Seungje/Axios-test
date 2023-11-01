@@ -18,7 +18,13 @@ const Main = () => {
           setFaces={setFaces}
         />
       )}
-      {step === "결과" && <Result goNext={() => setStep("이름")} />}
+      {step === "결과" && (
+        <Result
+          faceCount={faceCount}
+          faces={faces}
+          goNext={() => setStep("이름")}
+        />
+      )}
     </div>
   );
 };
