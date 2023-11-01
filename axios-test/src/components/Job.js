@@ -9,7 +9,7 @@ const Gender = ({ goNext }) => {
     <div>
       <input
         value={job}
-        placeholder="성별을 입력해주세요."
+        placeholder="직무를 입력해주세요."
         onChange={(e) => setJob(e.target.value)}
       />
       <button onClick={goNext}>다음</button>

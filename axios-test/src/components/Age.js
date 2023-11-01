@@ -9,7 +9,7 @@ const Age = ({ goNext }) => {
     <div>
       <input
         value={age}
-        placeholder="성별을 입력해주세요."
+        placeholder="나이를 입력해주세요."
         onChange={(e) => setAge(e.target.value)}
       />
       <button onClick={goNext}>다음</button>
