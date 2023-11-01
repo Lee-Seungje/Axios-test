@@ -13,7 +13,9 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <body>
-        <div className="w-500 h-500 bg-zinc-900">{children}</div>
+        <div className="w-screen flex justify-center h-screen bg-zinc-900">
+          {children}
+        </div>
       </body>
     </html>
   );
