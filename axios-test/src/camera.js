@@ -3,7 +3,6 @@ import Webcam from "react-webcam";
 import { useState } from "react";
 
 const CameraCapture = ({ goNext }) => {
-  console.log(name);
   const [image, setImage] = useState(null);
 
   const dataURItoBlob = (dataURI) => {
