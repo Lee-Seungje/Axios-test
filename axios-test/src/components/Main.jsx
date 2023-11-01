@@ -10,14 +10,28 @@ const Main = () => {
   return (
     <div className="w-96 flex justify-center h-screen">
       {step === "이름" && <Name goNext={() => setStep("나이")} />}
-      {step === "나이" && <Age goNext={() => setStep("성별")} />}
-      {step === "성별" && <Gender goNext={() => setStep("직무")} />}
-      {step === "직무" && <Job goNext={() => setStep("촬영")} />}
+      {step === "나이" && (
+        <Age goNext={() => setStep("성별")} goPrev={() => setStep("이름")} />
+      )}
+      {step === "성별" && (
+        <Gender goNext={() => setStep("직무")} goPrev={() => setStep("나이")} />
+      )}
+      {step === "직무" && (
+        <Job goNext={() => setStep("촬영")} goPrev={() => setStep("성별")} />
+      )}
       {step === "촬영" && (
-        <CameraCapture goNext={() => setStep("결과")} setFaces={setFaces} />
+        <CameraCapture
+          goNext={() => setStep("결과")}
+          goPrev={() => setStep("직무")}
+          setFaces={setFaces}
+        />
       )}
       {step === "결과" && (
-        <Result faces={faces} goNext={() => setStep("이름")} />
+        <Result
+          faces={faces}
+          goNext={() => setStep("이름")}
+          goPrev={() => setStep("촬영")}
+        />
       )}
     </div>
   );

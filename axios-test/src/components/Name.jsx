@@ -2,7 +2,7 @@
 
 import { useNameState } from "stores";
 
-const Name = ({ goNext }) => {
+const Name = ({ goNext, goPrev }) => {
   const { name, setName } = useNameState();
 
   return (
@@ -13,7 +13,18 @@ const Name = ({ goNext }) => {
         placeholder="이름을 입력해주세요."
         onChange={(e) => setName(e.target.value)}
       />
-      <button onClick={goNext}>다음</button>
+      <button
+        className="bg-blue-500 w-60 h-20 rounded-lg text-xl"
+        onClick={goPrev}
+      >
+        이전
+      </button>
+      <button
+        className="bg-blue-500 w-60 h-20 rounded-lg text-xl"
+        onClick={goNext}
+      >
+        다음
+      </button>
     </div>
   );
 };
