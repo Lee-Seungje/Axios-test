@@ -5,7 +5,7 @@ import Webcam from "react-webcam";
 import { useState } from "react";
 import { postImage } from "../api/postImage";
 
-const CameraCapture = ({ goNext }) => {
+const CameraCapture = ({ goNext, setFaces, setFaceCount }) => {
   const [image, setImage] = useState(null);
 
   const dataURItoBlob = (dataURI) => {
@@ -27,6 +27,15 @@ const CameraCapture = ({ goNext }) => {
 
   const getImageUrl = () => URL.createObjectURL(image);
 
+  const postPersonImage = async () => {
+    const {
+      faces,
+      info: { faceCount },
+    } = await postImage(image);
+    setFaceCount(faceCount);
+    setFaces(faces);
+  };
+
   return (
     <div>
       <Webcam audio={false} ref={webcamRef} screenshotFormat="image/jpeg" />
@@ -34,7 +43,8 @@ const CameraCapture = ({ goNext }) => {
       {image && <img src={getImageUrl()} />}
       <button
         onClick={() => {
-          console.log(postImage(image));
+          postPersonImage();
+          goNext();
         }}
       >
         다음
