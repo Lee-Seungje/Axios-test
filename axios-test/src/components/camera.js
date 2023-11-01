@@ -6,7 +6,7 @@ import { useState } from "react";
 import { postImage } from "api/postImage";
 import { useImageUrlState } from "stores";
 
-const CameraCapture = ({ goNext, setFaces, setFaceCount }) => {
+const CameraCapture = ({ goNext, setFaces }) => {
   const [image, setImage] = useState(null);
   const { setImageUrl } = useImageUrlState();
 
@@ -34,7 +34,6 @@ const CameraCapture = ({ goNext, setFaces, setFaceCount }) => {
       faces,
       info: { faceCount },
     } = await postImage(image);
-    setFaceCount(faceCount);
     setFaces(faces);
   };
 
