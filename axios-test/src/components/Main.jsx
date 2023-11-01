@@ -8,7 +8,7 @@ const Main = () => {
   const [faces, setFaces] = useState();
 
   return (
-    <div>
+    <div className="w-500">
       {step === "이름" && <Name goNext={() => setStep("나이")} />}
       {step === "나이" && <Age goNext={() => setStep("성별")} />}
       {step === "성별" && <Gender goNext={() => setStep("직무")} />}
