@@ -1,16 +1,16 @@
 "use client";
 
-import { useGenderState } from "stores";
+import { useAgeState } from "stores";
 
 const Age = ({ goNext }) => {
-  const { gender, setGender } = useGenderState();
+  const { age, setAge } = useAgeState();
 
   return (
     <div>
       <input
-        value={gender}
+        value={age}
         placeholder="성별을 입력해주세요."
-        onChange={(e) => setGender(e.target.value)}
+        onChange={(e) => setAge(e.target.value)}
       />
       <button onClick={goNext}>다음</button>
     </div>
