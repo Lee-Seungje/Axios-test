@@ -1,10 +1,19 @@
 "use client";
 
-import { useImageUrlState, useNameState } from "stores";
+import {
+  useImageUrlState,
+  useNameState,
+  useJobState,
+  useGenderState,
+  useAgeState,
+} from "stores";
 
 const Result = ({ goNext, faces }) => {
   const { imageUrl } = useImageUrlState();
   const { name } = useNameState();
+  const { job } = useJobState();
+  const { gender } = useGenderState();
+  const { age } = useAgeState();
 
   return (
     <div>
