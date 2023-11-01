@@ -1,7 +1,7 @@
-import CameraCapture from "./camera";
+import Main from "./Main";
 
 function App() {
-  return <CameraCapture />;
+  return <Main />;
 }
 
 export default App;
