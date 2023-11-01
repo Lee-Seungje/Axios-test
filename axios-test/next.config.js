@@ -1,7 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   swcMinify: true,
-  transpilePackages: ["common", "api"],
 
   rewrites: async () => [
     {

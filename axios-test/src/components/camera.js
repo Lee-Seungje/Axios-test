@@ -30,10 +30,7 @@ const CameraCapture = ({ goNext, setFaces }) => {
   const getImageUrl = () => URL.createObjectURL(image);
 
   const postPersonImage = async () => {
-    const {
-      faces,
-      info: { faceCount },
-    } = await postImage(image);
+    const { faces } = await postImage(image);
     setFaces(faces);
   };
 

@@ -14,12 +14,18 @@ dependencies:
   '@testing-library/user-event':
     specifier: ^13.5.0
     version: 13.5.0(@testing-library/dom@9.3.3)
+  autoprefixer:
+    specifier: ^10.4.16
+    version: 10.4.16(postcss@8.4.31)
   axios:
     specifier: ^1.6.0
     version: 1.6.0
   next:
     specifier: ^14.0.1
     version: 14.0.1(@babel/core@7.23.2)(react-dom@18.2.0)(react@18.2.0)
+  postcss:
+    specifier: ^8.4.31
+    version: 8.4.31
   react:
     specifier: ^18.2.0
     version: 18.2.0
@@ -32,6 +38,9 @@ dependencies:
   react-webcam:
     specifier: ^7.2.0
     version: 7.2.0(react-dom@18.2.0)(react@18.2.0)
+  tailwindcss:
+    specifier: ^3.3.5
+    version: 3.3.5
   web-vitals:
     specifier: ^2.1.4
     version: 2.1.4

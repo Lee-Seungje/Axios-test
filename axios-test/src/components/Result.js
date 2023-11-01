@@ -23,14 +23,12 @@ const Result = ({ goNext, faces }) => {
       <h2>나이 : {age}</h2>
       <h2>직무 : {job}</h2>
       <img src={imageUrl} />
-      <ul>
-        {faces?.map(({ celebrity }, i) => (
-          <li key={i}>
-            <h2>닮은 유명인 : {celebrity.value}</h2>
-            <h2>닮음도 : {celebrity.confidence * 100}%</h2>
-          </li>
-        ))}
-      </ul>
+      {faces && (
+        <>
+          <h2>닮은 유명인 : {faces[0].celebrity.value}</h2>
+          <h2>닮음도 : {faces[0].celebrity.confidence * 100}%</h2>
+        </>
+      )}
       <button onClick={goNext}>처음으로</button>
     </div>
   );
