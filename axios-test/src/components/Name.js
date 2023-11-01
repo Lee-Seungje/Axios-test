@@ -1,6 +1,6 @@
 "use client";
 
-import { useNameState } from "../stores/useNameState";
+import { useNameState } from "stores";
 
 const Name = ({ goNext }) => {
   const { name, setName } = useNameState();
