@@ -1,19 +1,18 @@
 "use client";
 
 import {
-  useImageUrlState,
   useNameState,
   useJobState,
-  useGenderState,
-  useAgeState,
+  useMailState,
+  useContactState,
 } from "stores";
 import Image from "next/image";
 
 const Result = ({ goNext, faces, imgUrl }) => {
   const { name } = useNameState();
   const { job } = useJobState();
-  const { gender } = useGenderState();
-  const { age } = useAgeState();
+  const { mail } = useMailState();
+  const { contact } = useContactState();
 
   return (
     <div>
@@ -22,8 +21,8 @@ const Result = ({ goNext, faces, imgUrl }) => {
           <span>이름 : {name}</span>
           <span>직무 : {job}</span>
         </div>
-        <span>성별 : {gender}</span>
-        <span>나이 : {age}</span>
+        <span>이메일 : {mail}</span>
+        <span>연락처 : {contact}</span>
         <div className="w-32 h-40 relative overflow-hidden rounded-lg	">
           <Image fill alt="" src={imgUrl} className="object-cover" />
         </div>

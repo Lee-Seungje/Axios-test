@@ -19,18 +19,18 @@ const Main = () => {
   return (
     <div className="w-custom flex justify-center">
       {step === "인트로" && <Intro goNext={() => setStep("이름")} />}
-      {step === "이름" && <Name goNext={() => setStep("나이")} />}
+      {step === "이름" && <Name goNext={() => setStep("직무")} />}
       {step === "직무" && (
-        <Job goNext={() => setStep("촬영")} goPrev={() => setStep("성별")} />
-      )}
-      {step === "나이" && (
-        <Mail goNext={() => setStep("연락처")} goPrev={() => setStep("이름")} />
+        <Job goNext={() => setStep("연락처")} goPrev={() => setStep("이름")} />
       )}
       {step === "연락처" && (
         <Contact
-          goNext={() => setStep("직무")}
-          goPrev={() => setStep("나이")}
+          goNext={() => setStep("메일")}
+          goPrev={() => setStep("직무")}
         />
+      )}
+      {step === "메일" && (
+        <Mail goNext={() => setStep("촬영")} goPrev={() => setStep("연락처")} />
       )}
       {step === "촬영" && (
         <CameraCapture
