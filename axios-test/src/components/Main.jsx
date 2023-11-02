@@ -45,8 +45,7 @@ const Main = () => {
         <Result
           imgUrl={imgUrl}
           faces={faces}
-          goNext={() => setStep("이름")}
-          goPrev={() => setStep("촬영")}
+          goNext={() => setStep("인트로")}
         />
       )}
     </div>
