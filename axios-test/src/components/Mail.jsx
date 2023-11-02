@@ -1,17 +1,17 @@
 "use client";
 
-import { useGenderState } from "stores";
+import { useMailState } from "stores";
 
-const Gender = ({ goNext, goPrev }) => {
-  const { gender, setGender } = useGenderState();
+const Mail = ({ goNext, goPrev }) => {
+  const { mail, setMail } = useMailState();
 
   return (
     <div className="flex flex-col	items-center relative">
       <input
         className="ease-in-out duration-200 focus:border-b border-blue-600 w-custom h-20 bg-neutral-900 text-4xl outline-none mt-24 "
-        value={gender}
-        placeholder="성별을 입력해주세요."
-        onChange={(e) => setGender(e.target.value)}
+        value={mail}
+        placeholder="이메일을 입력해주세요."
+        onChange={(e) => setMail(e.target.value)}
       />
       <div className="absolute bottom-2 flex w-custom justify-between	">
         <button
@@ -31,4 +31,4 @@ const Gender = ({ goNext, goPrev }) => {
   );
 };
 
-export default Gender;
+export default Mail;
