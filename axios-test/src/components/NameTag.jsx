@@ -14,18 +14,18 @@ const NameTag = ({ faces, isSimilarOpen, imgUrl }) => {
 
   return (
     <div className="w-custom h-custom bg-white text-zinc-500 flex justify-between pr-10">
-      <div className="flex flex-col text-black pt-10 pl-8">
-        <span className="text-4xl	font-semibold">
+      <div className="flex flex-col text-black pt-8 pl-8">
+        <span className="text-4xl font-semibold">
           {name.split("").join(" ")}
         </span>
         <span className="text-xl">{contact}</span>
-        <div className="mt-24 flex flex-col font-semibol">
+        <div className="mt-28 flex flex-col font-semibol">
           <span>{job}</span>
           <span>{mail}</span>
         </div>
       </div>
-      <div className="flex flex-col text-black pt-10 pl-8">
-        <div className="h-12">
+      <div className="flex flex-col text-black pt-8 pl-8">
+        <div className="h-12 mb-4">
           {faces && isSimilarOpen && (
             <>
               <div>

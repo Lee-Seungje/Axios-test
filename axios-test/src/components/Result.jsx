@@ -14,7 +14,7 @@ const Result = ({ goNext, faces, imgUrl }) => {
       const imgData = canvas.toDataURL("image/png");
       const link = document.createElement("a");
       link.href = imgData;
-      link.download = "my_component.png";
+      link.download = "명함.png";
       link.click();
     });
   };
