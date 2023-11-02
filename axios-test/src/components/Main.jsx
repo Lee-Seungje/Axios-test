@@ -17,7 +17,7 @@ const Main = () => {
 
   return (
     <div className="w-custom flex justify-center">
-      {step === "인트로" && <Intro goNext={() => setStep("이륾")} />}
+      {step === "인트로" && <Intro goNext={() => setStep("이름")} />}
       {step === "이름" && <Name goNext={() => setStep("나이")} />}
       {step === "나이" && (
         <Age goNext={() => setStep("성별")} goPrev={() => setStep("이름")} />
