@@ -16,6 +16,9 @@ module.exports = {
       height: {
         custom: "17.5rem",
       },
+      screens: {
+        standard: { min: "0px", max: "500px" },
+      },
     },
   },
   plugins: [],

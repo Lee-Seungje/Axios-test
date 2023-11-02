@@ -17,7 +17,7 @@ const Main = () => {
   const [imgUrl, setImgUrl] = useState("");
 
   return (
-    <div className="w-custom flex justify-center">
+    <div className="w-custom flex justify-center standard:w-screen">
       {step === "인트로" && <Intro goNext={() => setStep("이름")} />}
       {step === "이름" && <Name goNext={() => setStep("직무")} />}
       {step === "직무" && (
