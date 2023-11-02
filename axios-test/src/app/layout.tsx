@@ -13,7 +13,7 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <body>
-        <div className="w-screen flex justify-center h-screen bg-neutral-900">
+        <div className="w-screen flex justify-center bg-neutral-900 overflow-hidden">
           {children}
         </div>
       </body>

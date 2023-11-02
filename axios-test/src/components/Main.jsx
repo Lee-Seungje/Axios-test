@@ -16,7 +16,7 @@ const Main = () => {
   const [faces, setFaces] = useState();
 
   return (
-    <div className="w-custom flex justify-center h-screen">
+    <div className="w-custom flex justify-center">
       {step === "인트로" && <Intro goNext={() => setStep("이륾")} />}
       {step === "이름" && <Name goNext={() => setStep("나이")} />}
       {step === "나이" && (
