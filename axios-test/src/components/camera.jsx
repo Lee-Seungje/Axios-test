@@ -5,6 +5,7 @@ import Webcam from "react-webcam";
 import { useState } from "react";
 import { postImage } from "api/postImage";
 import { useImageUrlState } from "stores";
+import Image from "next/image";
 
 const CameraCapture = ({ goNext, setFaces, goPrev }) => {
   const [image, setImage] = useState(null);
@@ -35,7 +36,19 @@ const CameraCapture = ({ goNext, setFaces, goPrev }) => {
   };
 
   return (
-    <div>
+    <div className="relative">
+      <div className="w-custom absolute flex items-center flex-col">
+        <span className="text-3xl font-semibold mt-2">
+          윤곽선에 얼굴을 맞춰주세요
+        </span>
+        <Image
+          alt=""
+          width={400}
+          height={350}
+          src="/Frame.png"
+          className="mt-4"
+        />
+      </div>
       <Webcam audio={false} ref={webcamRef} screenshotFormat="image/jpeg" />
       <button
         className="ease-in-out duration-200	hover:bg-blue-600 bg-blue-500 w-custom h-14 text-xl absolute bottom-28 rounded-xl"
