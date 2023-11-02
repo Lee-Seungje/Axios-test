@@ -7,29 +7,46 @@ import {
   useGenderState,
   useAgeState,
 } from "stores";
+import Image from "next/image";
 
 const Result = ({ goNext, faces, imgUrl }) => {
   const { name } = useNameState();
   const { job } = useJobState();
   const { gender } = useGenderState();
   const { age } = useAgeState();
-  console.log(imgUrl);
 
   return (
     <div>
-      <h1>결과가 나옵니다.</h1>
-      <h2>이름 : {name}</h2>
-      <h2>성별 : {gender}</h2>
-      <h2>나이 : {age}</h2>
-      <h2>직무 : {job}</h2>
-      <img src={imgUrl} />
-      {faces && (
-        <>
-          <h2>닮은 유명인 : {faces[0].celebrity.value}</h2>
-          <h2>닮음도 : {faces[0].celebrity.confidence * 100}%</h2>
-        </>
-      )}
-      <button onClick={goNext}>처음으로</button>
+      <div className="w-custom h-custom bg-white text-zinc-500 flex">
+        <div>
+          <span>이름 : {name}</span>
+          <span>직무 : {job}</span>
+        </div>
+        <span>성별 : {gender}</span>
+        <span>나이 : {age}</span>
+        <div className="w-32 h-40 relative overflow-hidden rounded-lg	">
+          <Image fill alt="" src={imgUrl} className="object-cover" />
+        </div>
+        {faces && (
+          <>
+            <span>닮은 유명인 : {faces[0].celebrity.value}</span>
+            <span>닮음도 : {faces[0].celebrity.confidence * 100}%</span>
+          </>
+        )}
+      </div>
+      <div className="absolute bottom-2 flex w-custom justify-between	">
+        <button className="ease-in-out duration-200	hover:bg-blue-600 mb-8 bg-blue-500 w-60 rounded-xl h-14 text-xl ">
+          다운로드
+        </button>
+        <button
+          className="ease-in-out duration-200	hover:bg-blue-600 mb-8 bg-blue-500 w-60 rounded-xl h-14 text-xl "
+          onClick={() => {
+            goNext();
+          }}
+        >
+          다음
+        </button>
+      </div>
     </div>
   );
 };
