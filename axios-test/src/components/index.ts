@@ -7,3 +7,4 @@ export { default as Mail } from "./Mail";
 export { default as Job } from "./Job";
 export { default as Contact } from "./Contact";
 export { default as Intro } from "./Intro";
+export { default as NameTag } from "./NameTag";
