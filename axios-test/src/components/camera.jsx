@@ -6,7 +6,7 @@ import { useState } from "react";
 import { postImage } from "api/postImage";
 import { useImageUrlState } from "stores";
 
-const CameraCapture = ({ goNext, setFaces }) => {
+const CameraCapture = ({ goNext, setFaces, goPrev }) => {
   const [image, setImage] = useState(null);
   const { setImageUrl } = useImageUrlState();
 
@@ -37,17 +37,31 @@ const CameraCapture = ({ goNext, setFaces }) => {
   return (
     <div>
       <Webcam audio={false} ref={webcamRef} screenshotFormat="image/jpeg" />
-      <button onClick={capture}>사진 찍기</button>
-      {image && <img src={getImageUrl()} />}
       <button
-        onClick={() => {
-          setImageUrl(getImageUrl());
-          postPersonImage();
-          goNext();
-        }}
+        className="ease-in-out duration-200	hover:bg-blue-600 bg-blue-500 w-custom h-14 text-xl absolute bottom-28 rounded-xl"
+        onClick={capture}
       >
-        다음
+        사진 찍기
       </button>
+      {image && <img src={getImageUrl()} />}
+      <div className="absolute bottom-2 flex w-custom justify-between	">
+        <button
+          className="ease-in-out duration-200	hover:bg-blue-600 mb-8 bg-blue-500 w-60 rounded-xl h-14 text-xl "
+          onClick={goPrev}
+        >
+          이전
+        </button>
+        <button
+          className="ease-in-out duration-200	hover:bg-blue-600 mb-8 bg-blue-500 w-60 rounded-xl h-14 text-xl "
+          onClick={() => {
+            setImageUrl(getImageUrl());
+            postPersonImage();
+            goNext();
+          }}
+        >
+          다음
+        </button>
+      </div>
     </div>
   );
 };

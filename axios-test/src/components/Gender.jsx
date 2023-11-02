@@ -2,7 +2,7 @@
 
 import { useGenderState } from "stores";
 
-const Gender = ({ goNext }) => {
+const Gender = ({ goNext, goPrev }) => {
   const { gender, setGender } = useGenderState();
 
   return (
@@ -13,12 +13,20 @@ const Gender = ({ goNext }) => {
         placeholder="성별을 입력해주세요."
         onChange={(e) => setGender(e.target.value)}
       />
-      <button
-        className="ease-in-out duration-200	hover:bg-blue-600 bg-blue-500 w-custom h-20 text-xl absolute bottom-12"
-        onClick={goNext}
-      >
-        다음
-      </button>
+      <div className="absolute bottom-2 flex w-custom justify-between	">
+        <button
+          className="ease-in-out duration-200	hover:bg-blue-600 mb-12 bg-blue-500 w-60 rounded-xl h-14 text-xl "
+          onClick={goPrev}
+        >
+          이전
+        </button>
+        <button
+          className="ease-in-out duration-200	hover:bg-blue-600 mb-12 bg-blue-500 w-60 rounded-xl h-14 text-xl "
+          onClick={goNext}
+        >
+          다음
+        </button>
+      </div>
     </div>
   );
 };
