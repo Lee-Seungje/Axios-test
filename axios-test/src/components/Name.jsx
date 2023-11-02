@@ -13,6 +13,7 @@ const Name = ({ goNext }) => {
         value={name}
         placeholder="이름을 입력해주세요."
         onChange={(e) => setName(e.target.value)}
+        maxLength={6}
       />
       <button
         className="ease-in-out duration-200	hover:bg-blue-600 bg-blue-500 w-custom h-20 text-xl absolute bottom-12"

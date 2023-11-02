@@ -12,6 +12,7 @@ const Gender = ({ goNext, goPrev }) => {
         value={job}
         placeholder="직무를 입력해주세요."
         onChange={(e) => setJob(e.target.value)}
+        maxLength={17}
       />
       <div className="absolute bottom-2 flex w-custom justify-between	">
         <button

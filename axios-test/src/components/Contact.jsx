@@ -12,6 +12,7 @@ const Contact = ({ goNext, goPrev }) => {
         value={contact}
         placeholder="전화번호를 입력해주세요."
         onChange={(e) => setContact(e.target.value)}
+        maxLength={15}
       />
       <div className="absolute bottom-2 flex w-custom justify-between	">
         <button

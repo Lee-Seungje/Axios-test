@@ -12,6 +12,7 @@ const Mail = ({ goNext, goPrev }) => {
         value={mail}
         placeholder="이메일을 입력해주세요."
         onChange={(e) => setMail(e.target.value)}
+        maxLength={25}
       />
       <div className="absolute bottom-2 flex w-custom justify-between	">
         <button
