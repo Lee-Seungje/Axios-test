@@ -12,7 +12,7 @@ const Intro = ({ goNext }) => {
         <Image fill src="/NameTag.png" alt="" />
       </div>
       <button
-        className="ease-in-out duration-200	mb-12 hover:bg-blue-600 bg-blue-500 w-11/12 rounded-xl h-14 text-xl absolute bottom-2"
+        className="ease-in-out duration-200	hover:bg-blue-600 mb-12 bg-blue-500 w-11/12 rounded-xl h-14 text-xl absolute bottom-2"
         onClick={goNext}
       >
         다음
