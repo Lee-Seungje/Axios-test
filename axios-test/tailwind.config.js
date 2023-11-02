@@ -11,7 +11,7 @@ module.exports = {
   theme: {
     extend: {
       width: {
-        custom: "31.25rem", // 원하는 너비 정의
+        custom: "31.25rem",
       },
     },
   },

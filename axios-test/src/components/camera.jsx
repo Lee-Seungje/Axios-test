@@ -2,14 +2,12 @@
 
 import React, { useRef, useCallback } from "react";
 import Webcam from "react-webcam";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { postImage } from "api/postImage";
-import { useImageUrlState } from "stores";
 import Image from "next/image";
 
-const CameraCapture = ({ goNext, setFaces, goPrev }) => {
+const CameraCapture = ({ goNext, setFaces, goPrev, imgUrl, setImgUrl }) => {
   const [image, setImage] = useState(null);
-  const { setImageUrl } = useImageUrlState();
 
   const dataURItoBlob = (dataURI) => {
     const byteString = atob(dataURI.split(",")[1]);
@@ -35,8 +33,12 @@ const CameraCapture = ({ goNext, setFaces, goPrev }) => {
     setFaces(faces);
   };
 
+  useEffect(() => {
+    if (image) setImgUrl(getImageUrl);
+  }, [image]);
+
   return (
-    <div className="relative">
+    <div className="relative flex items-center flex-col">
       <div className="w-custom absolute flex items-center flex-col">
         <span className="text-3xl font-semibold mt-2">
           윤곽선에 얼굴을 맞춰주세요
@@ -56,7 +58,7 @@ const CameraCapture = ({ goNext, setFaces, goPrev }) => {
       >
         사진 찍기
       </button>
-      {image && <img src={getImageUrl()} />}
+      {imgUrl.length > 0 && <img src={imgUrl} />}
       <div className="absolute bottom-2 flex w-custom justify-between	">
         <button
           className="ease-in-out duration-200	hover:bg-blue-600 mb-8 bg-blue-500 w-60 rounded-xl h-14 text-xl "
@@ -67,7 +69,6 @@ const CameraCapture = ({ goNext, setFaces, goPrev }) => {
         <button
           className="ease-in-out duration-200	hover:bg-blue-600 mb-8 bg-blue-500 w-60 rounded-xl h-14 text-xl "
           onClick={() => {
-            setImageUrl(getImageUrl());
             postPersonImage();
             goNext();
           }}

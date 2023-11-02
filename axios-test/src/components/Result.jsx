@@ -8,12 +8,12 @@ import {
   useAgeState,
 } from "stores";
 
-const Result = ({ goNext, faces }) => {
-  const { imageUrl } = useImageUrlState();
+const Result = ({ goNext, faces, imgUrl }) => {
   const { name } = useNameState();
   const { job } = useJobState();
   const { gender } = useGenderState();
   const { age } = useAgeState();
+  console.log(imgUrl);
 
   return (
     <div>
@@ -22,7 +22,7 @@ const Result = ({ goNext, faces }) => {
       <h2>성별 : {gender}</h2>
       <h2>나이 : {age}</h2>
       <h2>직무 : {job}</h2>
-      <img src={imageUrl} />
+      <img src={imgUrl} />
       {faces && (
         <>
           <h2>닮은 유명인 : {faces[0].celebrity.value}</h2>

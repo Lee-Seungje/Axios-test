@@ -14,6 +14,7 @@ import { useState } from "react";
 const Main = () => {
   const [step, setStep] = useState("인트로");
   const [faces, setFaces] = useState();
+  const [imgUrl, setImgUrl] = useState("");
 
   return (
     <div className="w-custom flex justify-center">
@@ -33,10 +34,13 @@ const Main = () => {
           goNext={() => setStep("결과")}
           goPrev={() => setStep("직무")}
           setFaces={setFaces}
+          setImgUrl={setImgUrl}
+          imgUrl={imgUrl}
         />
       )}
       {step === "결과" && (
         <Result
+          imgUrl={imgUrl}
           faces={faces}
           goNext={() => setStep("이름")}
           goPrev={() => setStep("촬영")}
