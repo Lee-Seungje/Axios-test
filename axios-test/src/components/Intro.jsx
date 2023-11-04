@@ -14,7 +14,7 @@ const Intro = ({ goNext }) => {
       <span className="text-3xl font-semibold mt-1 shadow-2xl shadow-blue-500/50">
         효과적으로 어필하세요
       </span>
-      <div className="w-96 h-48 relative mt-16 standard:w-10/12 standard:h-1/6">
+      <div className="w-96 h-48 relative mt-16 standard:w-10/12 standard:h-32">
         <Image fill src="/NameTag.png" alt="" />
       </div>
       <button
